@@ -35,7 +35,7 @@ describe("calculator", () => {
   expect(account.greeting).to.eql(text)
   });
 
-  // Another test step - test out addition
+  // Add test
   it('Addition', async () => {
     await program.methods.add(new anchor.BN(2), new anchor.BN(3))
     .accounts({ 
@@ -47,5 +47,41 @@ describe("calculator", () => {
     expect(account.result).to.deep.equal(new anchor.BN(5))
   });
 
+
+  // Sub Test
+  it('Subtraction', async () => {
+    await program.methods.sub(new anchor.BN(3), new anchor.BN(1))
+    .accounts({ 
+      calculator: calculatorPair.publicKey,
+    })
+    .rpc()
+
+    const account = await program.account.calculator.fetch(calculatorPair.publicKey)
+    expect(account.result).to.deep.equal(new anchor.BN(2))
+  });
+
+  // Mult Test
+  it('Addition', async () => {
+    await program.methods.mul(new anchor.BN(2), new anchor.BN(3))
+    .accounts({ 
+      calculator: calculatorPair.publicKey,
+    })
+    .rpc()
+
+    const account = await program.account.calculator.fetch(calculatorPair.publicKey)
+    expect(account.result).to.deep.equal(new anchor.BN(6))
+  });
+
+  // Another test step - test out addition
+  it('Division', async () => {
+    await program.methods.div(new anchor.BN(10), new anchor.BN(2))
+    .accounts({ 
+      calculator: calculatorPair.publicKey,
+    })
+    .rpc()
+
+    const account = await program.account.calculator.fetch(calculatorPair.publicKey)
+    expect(account.result).to.deep.equal(new anchor.BN(5))
+  });
   
 });
