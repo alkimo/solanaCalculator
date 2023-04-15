@@ -1,10 +1,10 @@
 # Solana Calculator Demo with Anchor 🧮
 
-Welcome to our Solana calculator demo! This project uses Anchor, a Solana program development framework, to build a basic calculator on the Solana blockchain.
+Welcome to my Solana calculator demo! This project uses Anchor, a Solana program development framework, to build a basic calculator on the Solana blockchain.
 
 ## Project Overview 📝
 
-Our calculator demo is a simple program that performs basic arithmetic operations such as addition, subtraction, multiplication, and division. Users can interact with the program by sending Solana transactions that contain their desired arithmetic operation and operands. The program then performs the operation and returns the result.
+The calculator demo is a simple program that performs basic arithmetic operations such as addition, subtraction, multiplication, and division. Users can interact with the program by sending Solana transactions that contain their desired arithmetic operation and operands. The program then performs the operation and returns the result.
 
 ## Getting Started 🚀
 
@@ -27,3 +27,10 @@ To use our calculator program, you will need to construct a Solana transaction t
 
 For example, to perform the addition operation on the operands 5 and 10, you would construct a Solana transaction like this:
 
+```
+solana program execute <program-id> add 5 10 --accounts <program-account>
+```
+
+## License 📜
+
+This project is licensed under the MIT License - see the LICENSE.md file for details.
