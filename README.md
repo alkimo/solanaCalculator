@@ -25,12 +25,6 @@ To use our calculator program, you will need to construct a Solana transaction t
 - Multiplication: `mul(a: i64, b: i64)`
 - Division: `div(a: i64, b: i64)`
 
-For example, to perform the addition operation on the operands 5 and 10, you would construct a Solana transaction like this:
-
-```
-solana program execute <program-id> add 5 10 --accounts <program-account>
-```
-
 ## License 📜
 
 This project is licensed under the MIT License - see the LICENSE.md file for details.
